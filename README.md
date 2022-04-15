@@ -8,7 +8,7 @@
 3. [Ssh로 remote server 접속 시 terminal 색깔 입히기](#3-Ssh로-remote-server-접속-시-terminal-색깔-입히기)  
 4. [Ssh 비밀번호로 접속 설정하기](#4-Ssh-비밀번호로-접속-설정하기)
 5. [Ssh로 remote server 접속 시 alias 기본으로 설정 하기](#5-Ssh로-remote-server-접속-시-alias-기본으로-설정-하기)
-6. [Ssh로 remote server 접속 시 .bashrc 기본으로 실행하기](#6-Ssh로-remote-server-접속-시-.bashrc-기본으로-실행하기)
+6. [Ssh로 remote server 접속 시 bashrc 기본으로 실행하기](#6-Ssh로-remote-server-접속-시-bashrc-기본으로-실행하기)
 7. [하위 폴더안에 있는 파일 개수 출력](#7-하위-폴더안에-있는-파일-개수-출력)
 
 <br />
@@ -113,7 +113,7 @@ fi
 
 <br />
 
-# 6. Ssh로 remote server 접속 시 .bashrc 기본으로 실행하기
+# 6. Ssh로 remote server 접속 시 bashrc 기본으로 실행하기
 * ```~/.bash_profile``` 파일을 생성하고 아래 코드를 추가한다.
 ```
 if [ -f ~/.bashrc ]; then 
@@ -129,3 +129,5 @@ fi
 for x in `ls` ; do echo $x: `find $x -type f | wc -l`; done
 ```
 추가로 ```~/.bash_aliases``` 에 ```alias fn='for x in `ls` ; do echo $x: `find $x -type f | wc -l`; done'``` 를 추가해주면 편하게 ```fn``` 명령어로 실행시킬 수 있다.
+
+<br />
