@@ -10,6 +10,7 @@
 5. [Ssh로 remote server 접속 시 alias 기본으로 설정 하기](#5-Ssh로-remote-server-접속-시-alias-기본으로-설정-하기)
 6. [Ssh로 remote server 접속 시 bashrc 기본으로 실행하기](#6-Ssh로-remote-server-접속-시-bashrc-기본으로-실행하기)
 7. [하위 폴더안에 있는 파일 개수 출력](#7-하위-폴더안에-있는-파일-개수-출력)
+8. [Ssh 서버 파일 원격 전송하기](#8-Ssh-서버-파일-원격-전송하기)
 
 <br />
 
@@ -130,4 +131,17 @@ for x in `ls` ; do echo $x: `find $x -type f | wc -l`; done
 ```
 추가로 ```~/.bash_aliases``` 에 ```alias fn='for x in `ls` ; do echo $x: `find $x -type f | wc -l`; done'``` 를 추가해주면 편하게 ```fn``` 명령어로 실행시킬 수 있다.
 
+<br />
+
+# 8. Ssh 서버 파일 원격 전송하기
+* Local에서 ssh로 파일 전송
+```
+scp -r {local 서버 주소} {ssh 서버 주소}
+ex) scp -r root@118.67.131.239:/opt/ml/code /Users/Desktop/
+```
+* Ssh에서 local로 파일 전송
+```
+scp -r {ssh 서버 주소} {local 서버 주소}
+ex) scp -r /Users/Download/a.txt root@118.67.131.239:/opt/ml/code
+```
 <br />
