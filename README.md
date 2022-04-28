@@ -12,6 +12,7 @@
 7. [하위 폴더안에 있는 파일 개수 출력](#7-하위-폴더안에-있는-파일-개수-출력)
 8. [Ssh 서버 파일 원격 전송하기](#8-Ssh-서버-파일-원격-전송하기)
 9. [파이썬 리스트 회전하기](#9-파이썬-리스트-회전하기)
+10. [GPU에 메모리는 할당되어 있는데 nvidia-smi에는 안나올 때](#10-GPU에-메모리는-할당되어-있는데-nvidia-smi에는-안나올-때)
 
 <br />
 
@@ -174,4 +175,11 @@ li = [list(k) for k in reversed(tuple(zip(*k)))]
 #                             [2, 5, 8],
 #                             [1, 4, 7]]
 print(li)
+```
+
+<br />
+
+# 10. GPU에 메모리는 할당되어 있는데 nvidia-smi에는 안나올 때
+```
+for i in $(ps aux | grep python | awk '{print $2}' | sort -u); do kill -9 $i; done
 ```
